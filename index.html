@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adventure Game Review</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="main">
@@ -15,51 +15,64 @@
         </p>
 
         <div class="form-content">
-            <form id="review-form">
-                <label for="username">Your Name:</label>
-                <input type="text" id="username" name="username" placeholder="Enter your name">
-                <span class="error" id="name-error"></span>
+            <form id="review-form" action="https://httpbin.org/post" method="POST">
+                <fieldset>
+                    <legend>Your Information</legend>
+                    <label for="username">Your Name:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your name" required>
+                    <span class="error" id="name-error"></span>
 
-                <label for="rating">How would you rate the game overall?</label>
-                <div class="radio-group">
-                    <input type="radio" id="rating-1" name="rating" value="1">
-                    <label for="rating-1">1 - Poor</label><br>
-                    <input type="radio" id="rating-2" name="rating" value="2">
-                    <label for="rating-2">2 - Fair</label><br>
-                    <input type="radio" id="rating-3" name="rating" value="3">
-                    <label for="rating-3">3 - Good</label><br>
-                    <input type="radio" id="rating-4" name="rating" value="4">
-                    <label for="rating-4">4 - Very Good</label><br>
-                    <input type="radio" id="rating-5" name="rating" value="5">
-                    <label for="rating-5">5 - Excellent</label>
-                </div>
-                <span class="error" id="rating-error"></span>
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <span class="error" id="email-error"></span>
+                </fieldset>
 
-                <label>What did you like about the game?</label>
-                <div class="checkbox-group">
-                    <input type="checkbox" id="story" name="likes" value="story">
-                    <label for="story">Story</label><br>
-                    <input type="checkbox" id="gameplay" name="likes" value="gameplay">
-                    <label for="gameplay">Gameplay</label><br>
-                    <input type="checkbox" id="styling" name="likes" value="styling">
-                    <label for="styling">Styling</label><br>
-                </div>
+                <fieldset>
+                    <legend>Game Rating</legend>
+                    <label>How would you rate the game overall?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="rating-1" name="rating" value="1" required>
+                        <label for="rating-1">1 - Poor</label><br>
+                        <input type="radio" id="rating-2" name="rating" value="2">
+                        <label for="rating-2">2 - Fair</label><br>
+                        <input type="radio" id="rating-3" name="rating" value="3">
+                        <label for="rating-3">3 - Good</label><br>
+                        <input type="radio" id="rating-4" name="rating" value="4">
+                        <label for="rating-4">4 - Very Good</label><br>
+                        <input type="radio" id="rating-5" name="rating" value="5">
+                        <label for="rating-5">5 - Excellent</label>
+                    </div>
+                    <span class="error" id="rating-error"></span>
+                </fieldset>
 
-                <label for="difficulty">How difficult was the game?</label>
-                <select id="difficulty" name="difficulty">
-                    <option value="">Select an option</option>
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
-                </select>
-                <span class="error" id="difficulty-error"></span>
+                <fieldset>
+                    <legend>What Did You Like?</legend>
+                    <label>What did you like about the game?</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="story" name="likes" value="story">
+                        <label for="story">Story</label><br>
+                        <input type="checkbox" id="gameplay" name="likes" value="gameplay">
+                        <label for="gameplay">Gameplay</label><br>
+                        <input type="checkbox" id="styling" name="likes" value="styling">
+                        <label for="styling">Styling</label><br>
+                    </div>
+                    <span class="error" id="likes-error"></span>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Game Difficulty</legend>
+                    <label for="difficulty">How difficult was the game?</label>
+                    <select id="difficulty" name="difficulty" required>
+                        <option value="">Select an option</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                    <span class="error" id="difficulty-error"></span>
+                </fieldset>
 
                 <label for="comments">Additional Comments:</label>
                 <textarea id="comments" name="comments" placeholder="Share your thoughts..." rows="4"></textarea>
-
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email">
-                <span class="error" id="email-error"></span>
 
                 <button type="submit" class="submit-btn">Submit</button>
             </form>
