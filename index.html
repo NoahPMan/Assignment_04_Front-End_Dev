@@ -9,25 +9,22 @@
 <body>
     <div class="survey-container">
         <h1>Game Review Survey</h1>
-        <form id="review-form" action="https://httpbin.org/post" method="POST">
+        <form id="review-form" action="https://httpbin.org/post" method="POST" novalidate>
             <fieldset>
                 <legend>Your Information</legend>
-                <!-- Text Field for Reviewer Name -->
                 <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required>
-                <span class="error-message" id="name-error"></span>
+                <input type="text" id="name" name="name" aria-label="Enter your name">
+                <span class="error-message" id="name-error" role="alert"></span>
 
-                <!-- Email Field -->
                 <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required>
-                <span class="error-message" id="email-error"></span>
+                <input type="email" id="email" name="email" aria-label="Enter your email address">
+                <span class="error-message" id="email-error" role="alert"></span>
             </fieldset>
 
             <fieldset>
                 <legend>Game Review</legend>
-                <!-- Radio Button Group for Game Rating -->
                 <label>How would you rate the game?</label>
-                <input type="radio" id="rating-1" name="rating" value="1" required>
+                <input type="radio" id="rating-1" name="rating" value="1">
                 <label for="rating-1">1 (Poor)</label>
                 <input type="radio" id="rating-2" name="rating" value="2">
                 <label for="rating-2">2</label>
@@ -37,21 +34,19 @@
                 <label for="rating-4">4</label>
                 <input type="radio" id="rating-5" name="rating" value="5">
                 <label for="rating-5">5 (Excellent)</label>
-                <span class="error-message" id="rating-error"></span>
+                <span class="error-message" id="rating-error" role="alert"></span>
 
-                <!-- Checkbox Group for Game Features -->
                 <label>Which features did you enjoy? (Select all that apply)</label>
-                <input type="checkbox" id="story" name="features" value="Story">
+                <input type="checkbox" id="story" name="features" value="Story" aria-label="Engaging Story">
                 <label for="story">Engaging Story</label>
-                <input type="checkbox" id="styling" name="features" value="Styling">
+                <input type="checkbox" id="styling" name="features" value="Styling" aria-label="Styling">
                 <label for="styling">Styling</label>
-                <input type="checkbox" id="choices" name="features" value="Choices">
+                <input type="checkbox" id="choices" name="features" value="Choices" aria-label="Choices & Consequences">
                 <label for="choices">Choices & Consequences</label>
-                <span class="error-message" id="features-error"></span>
+                <span class="error-message" id="features-error" role="alert"></span>
 
-                <!-- Dropdown Menu for Favorite Game Genre -->
                 <label for="genre">Select Your Favorite Game Genre:</label>
-                <select id="genre" name="genre" required>
+                <select id="genre" name="genre" aria-label="Select your favorite game genre">
                     <option value="" disabled selected>Please select a genre</option>
                     <option value="action">Action</option>
                     <option value="adventure">Adventure</option>
@@ -60,12 +55,11 @@
                     <option value="simulation">Simulation</option>
                     <option value="sports">Sports</option>
                 </select>
-                <span class="error-message" id="genre-error"></span>
+                <span class="error-message" id="genre-error" role="alert"></span>
 
-                <!-- Text Area for Feedback -->
                 <label for="feedback">Additional Feedback:</label>
-                <textarea id="feedback" name="feedback" rows="4" placeholder="Share your thoughts about the game..."></textarea>
-                <span class="error-message" id="feedback-error"></span>
+                <textarea id="feedback" name="feedback" rows="4" placeholder="Share your thoughts about the game..." aria-label="Additional feedback about the game"></textarea>
+                <span class="error-message" id="feedback-error" role="alert"></span>
             </fieldset>
 
             <button type="submit">Submit Review</button>
