@@ -13,3 +13,4 @@ One of the main challenges was handling real-time error clearing effectively. I 
 # 4. What would I do differently now?
 
 If I could do this project again, I'd focus more on accessibility and user experience. While the form works, I know it could use better aria-label attributes and improved keyboard navigation to be more user-friendly. For styling, I would aim for a more polished and responsive design, as the current one is pretty basic. I’d also make sure that error messages are clearer and fit the overall form design better. Lastly, I'd optimize my JavaScript code by refactoring some validation functions to reduce redundancy and improve readability. Using libraries like the HTML5 Constraint Validation API could simplify some processes and offer better support across different browsers.
+
